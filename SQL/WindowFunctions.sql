@@ -1,13 +1,16 @@
-Window Functions allow you to perform a query against a subset of data
+/* Window Functions allow you to perform a query against a subset of data
 	• Any WHERE statement would be executed before the windows function. So if you want to filter based on a value in the Windows function, put the Windows function in a CTE.
 	• Syntax: FUNCTION() OVER(PARTITION BY [...] {works similar to a GROUP BY clause} ORDER BY [...] FRAME [...] {optionally limits data set; ex. limit to current row}
 
 
 OVER
 	• Used with Windows functions to aggregate results based on a given value; works similar to GROUP BY
+*/
 
-Verbose solution
--- select animals admitted after given date, total # of animals
+/* Verbise solution
+-select animals admitted after given date, total # of animals
+*/
+
 SELECT Species
 	,Name
 	,Primary_Color
@@ -21,8 +24,10 @@ FROM Animals
 WHERE Admission_Date >= '2024-04-05'
 ORDER BY Admission_Date;
 
-More elegant solution
--- select animals admitted after given date, total # of animals
+/* More elegant solution
+select animals admitted after given date, total # of animals
+*/
+
 SELECT Species
 	,Name
 	,Primary_Color
@@ -66,8 +71,10 @@ ORDER BY Year, Month
 
 
 
-Verbose solution
--- select animals, and total # of animals by species 
+/* Verbose solution
+select animals, and total # of animals by species 
+*/
+	
 SELECT A1.Species
 	,A1.Name
 	,A1.Primary_Color
@@ -81,8 +88,10 @@ FROM Animals AS A1
 ORDER BY A1.Species
 	,A1.Admission_Date;
 
-Better solution
--- select animals, and total # of animals by species 
+/* Better solution
+select animals, and total # of animals by species 
+*/
+
 SELECT A.Species
 	,A.Name
 	,A.Primary_Color
@@ -98,8 +107,10 @@ INNER JOIN (
 ORDER BY A.Species
 	,A.Admission_Date;
 
-More elegant solution
--- select animals, and total # of animals by species 
+/* More elegant solution
+select animals, and total # of animals by species 
+*/
+
 SELECT Species
 	,Name
 	,Primary_Color
@@ -142,7 +153,7 @@ ORDER BY ProdCategory
 
 
 
-RANK
+/* RANK
 	• Assigns a rank to each row based on the column value; skips values for two or more positions having the same rank.
 	• Similar to ROW_NUMBER, except ties are given the same rank. The next sequential number(s) is then skipped.
 	• PARTITION BY, ORDER BY, and FRAME are optional
@@ -150,7 +161,7 @@ RANK
 	
 DENSE RANK
 	• Assigns a rank to each row based on the column value; does not skip values if two or more positions have the same value.
-	
+*/	
 
 SELECT id
 	,account_id
@@ -177,13 +188,14 @@ FROM orders WINDOW account_year_window AS (
 		)
 
 
-LEAD
+/* LEAD
 	• Retrieves values from rows that follow the selected row
 	• Syntax: LEAD([Column],Offset#)
 		○ Offset tells SQL how many rows to go back; default value is 1 if not otherwise specified
 		○ ORDER BY is required
 		○ PARTITION BY and FRAME are optional
-
+*/
+	
 SELECT occurred_at
 	,total_amt_usd
 	,LEAD(total_amt_usd) OVER (
@@ -201,13 +213,14 @@ FROM (
 
 
 	
-LAG
+/* LAG
 	• Retrieves values from rows that precede the selected row
 	• Syntax: LAG([Column],Offset#)
 		○ Offset tells SQL how many rows to go back; default value is 1 if not otherwise specified
 		○ ORDER BY is required
 		○ PARTITION BY and FRAME are optional
-
+*/
+	
 WITH OrderByDays
 AS (
 	SELECT OrderDate, Sum(Quantity) AS Tot_Day
@@ -236,9 +249,10 @@ FROM OrderByDays
 
 
 
-BETWEEN
+/* BETWEEN
 	• Allows you to select values (numbers, text, or dates) within a specified range
-
+*/
+	
 -- # vaccinations per year,  Avg # vaccinations in previous 2 years, % diff from current year and 2 yr avg
 WITH Annual_Vaccinations_With_Previous_2_Year_Average
 AS (
@@ -264,7 +278,7 @@ ORDER BY Year;
 
 
 
-UNBOUNDED PRECEDING
+-- UNBOUNDED PRECEDING
 
 SELECT MIN(Z) OVER W AS MIN_Z
 	,MAX(Z) OVER W AS MAX_Z
