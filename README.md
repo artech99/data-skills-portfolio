@@ -1,14 +1,30 @@
-Hi, I'm Myesha. I created this repository to store code I've worked on and to showcase skills I've learned.
-The files contain code and notes compiled from SQL, Python, and JavaScript courses, as well as on the job experience.
-As I continue to learn new advanced skills and work on new projects, I plan to add to this repository.
+Welcome to My Repository
 
-If you like my work and are interested in my background, feel free to connect with me on LinkedIn:
-www.linkedin.com/pub/myesha-dubose/57/734/a39.
+Hi, I’m Myesha. I’m an IT professional with extensive experience in successfully leading cross-functional teams of engineers and developers. I provide technical direction for program infrastructure upgrades aimed at maintaining system integrity and availability, and I plan balanced approaches to migrate to the cloud.
 
-Below are the direct links to my work samples.
 
-SQL: https://github.com/artech99/myesha_dubose/tree/Sample-SQL
+About Me
 
-Python: https://github.com/artech99/myesha_dubose/tree/Sample-Python
+My primary role has been as a Product Owner, but I am looking to transition into a more hands-on technical role. My target roles include:
+* Data Engineer
+* Data Warehouse Developer
+* Database Developer
+* SQL Developer
 
-JavaScript: https://github.com/artech99/myesha_dubose/tree/Sample-JavaScript
+
+Goals and Qualifications
+
+I am dedicated to elevating my skills and staying current with the latest technologies. This repository serves as a portfolio to store code I’ve worked on while also showcasing skills I’ve developed in SQL, Python, and JavaScript, and demonstrating my capabilities for my target roles.
+
+  
+Repository Contents
+
+As I continue to learn new advanced skills and work on new projects, I plan to add to this repository. Here, you’ll find:
+* SQL scripts and queries
+* Python projects and scripts
+* JavaScript code snippets and projects
+
+
+Connect with Me
+
+If you appreciate my work and are interested in my background, feel free to connect with me on LinkedIn: www.linkedin.com/pub/myesha-dubose/57/734/a39.
