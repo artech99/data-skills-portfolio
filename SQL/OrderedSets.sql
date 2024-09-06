@@ -1,11 +1,12 @@
-Ordered Set Functions
+/* Ordered Set Functions
 	• String aggregate - if a NULL value appears in the data, string aggregate will ignore/remove all values in the row
 	• CONCAT will return all other values except for the NULL
+*/
 
-
-Grouping Sets
-
+/* Grouping Sets
 Verbose solution
+*/
+
 WITH Aggregated_Adoptions
 AS (
 	SELECT YEAR(Adoption_Date) AS Year
@@ -30,8 +31,10 @@ FROM Aggregated_Adoptions
 GROUP BY ();-- this is the same as GROUP'ing by the entire table and is generally omitted; it is included here to have a UNION between the same number of columns
 
 
-More elegant solutions
--- total adoptions by month
+/* More elegant solutions
+total adoptions by month
+*/
+
 SELECT YEAR(Adoption_Date) AS Year
 	,MONTH(Adoption_Date) AS MONTH
 	,COUNT(*) AS Monthly_Adoptions
