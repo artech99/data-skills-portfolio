@@ -19,9 +19,9 @@ WHERE o.total IS NULL;
 
 
 
-CAST
+/* CAST
 	• Allows you to apply a specific data type and/or format to a value
-
+*/
 -- select each month's total adoptions as a percentage of the annual adoptions; round to 2 decimal places
 WITH Monthly_Grouped_Adoptions
 AS (
