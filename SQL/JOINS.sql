@@ -1,5 +1,6 @@
-Chiastic Order
+/* Chiastic Order
 	• Enforce JOIN ORDER using Chiastic Order
+*/
 
 
 -- return all rows where there is a match in all 3 tables
@@ -26,14 +27,16 @@ LEFT JOIN (
 
 
 
-ANTI-JOINS
+/* ANTI-JOINS
 	• Used to select rows where something does NOT exist
 
-
 NOT EXIST
+*/
 
-Verbose solution 
--- select animals who have not been adopted --
+/* Verbose solution 
+select animals who have not been adopted
+*/
+
 SELECT DISTINCT AN.Name
 	,AN.Species
 FROM Animals AS AN
@@ -42,8 +45,10 @@ LEFT OUTER JOIN Adoptions AS AD ON AD.Name = AN.Name
 WHERE AD.Name IS NULL;
 
 
-More elegant solution
--- select animals who have not been adopted --
+/* More elegant solution
+select animals who have not been adopted
+*/
+
 SELECT Name
 	,Species
 FROM Animals AS AN
@@ -54,19 +59,16 @@ WHERE NOT EXISTS (
 			AND AD.Species = AN.Species
 		);
 
-Note: When using EXISTS, Inner Query can use SELECT NULL, SELECT *, or any other SELECT statement. It does not affect the results of the Outer Query.
+/* Note: When using EXISTS, Inner Query can use SELECT NULL, SELECT *, or any other SELECT statement. It does not affect the results of the Outer Query. */
 
-
-EXCEPT
-
--- select animals who have not been adopted -- 
+-- select animals who have not been adopted 
 SELECT Name, Species
 FROM Animals
 EXCEPT
 SELECT Name, Species
 FROM Adoptions;
 
--- select breeds that have not been adopted --
+-- select breeds that have not been adopted
 SELECT Species, Breed
 FROM Animals
 EXCEPT
@@ -77,9 +79,10 @@ INNER JOIN Adoptions AS AD ON AD.Name = AN.Name
 
 
 
-SELF JOIN
+/* SELF JOIN
 	• Used when a table references data within itself
-
+*/
+	
 -- when using effective dated tables, alias a table and reference it in a subquery with a different alias to select the most recent value for a given field value
 WHERE a.effdt = (
 		SELECT max(a1.effdt)
@@ -128,13 +131,14 @@ FROM employee e
 INNER JOIN employee m ON e.managerID = m.managerID
 
 
+/* LATERAL JOIN
+	• Allows you to create a computation in a subquery that is reused in the outer query	
+*/
 
-LATERAL JOIN
-	• Allows you to create a computation in a subquery that is reused in the outer query
-	
-CROSS APPLY
+/* CROSS APPLY
+select the last 3 vaccinations per animal (T-SQL); do not return animals who were never vaccinated)
+*/
 
--- select the last 3 vaccinations per animal (T-SQL); do not return animals who were never vaccinated) --
 SELECT A.Name
 	,A.Species
 	,A.Primary_Color
@@ -150,10 +154,10 @@ CROSS APPLY (
 	ORDER BY V.Vaccination_Time DESC OFFSET 0 ROWS FETCH NEXT 3 ROW ONLY
 	) AS Last_Vaccinations;
 
+/* OUTER APPLY
+select the last 3 vaccinations per animal (T-SQL); return animals who were never vaccinated) 
+*/
 
-OUTER APPLY
-
--- select the last 3 vaccinations per animal (T-SQL); return animals who were never vaccinated) --
 SELECT A.Name
 	,A.Species
 	,A.Primary_Color
@@ -170,12 +174,12 @@ OUTER APPLY (
 	) AS Last_Vaccinations;
 
 
+--RECURSIONS
 
-RECURSIONS
+/* UNION ALL
+generate days of a year
+*/
 
-UNION ALL
-
--- generate days of a year --
 WITH Days_of_2024 (Day)
 AS (
 	SELECT CAST('20240101' AS DATE)
@@ -191,10 +195,10 @@ FROM Days_of_2024
 ORDER BY Day
 OPTION (MAXRECURSION 365);-- SQL Server has a max recursion depth of 100, unless explicitly defined
 
-
-RECURSIVE
+/* RECURSIVE
 	• Refers to a recursive CTE
-	
+*/
+
 -- create Fibonacci series -- 
 WITH RECURSIVE f (m, n)
 AS (
