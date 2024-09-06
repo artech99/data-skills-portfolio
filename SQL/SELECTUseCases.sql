@@ -1,6 +1,7 @@
-RIGHT
+/* RIGHT
+select the domain of a website
+*/
 
--- select the domain of a website
 SELECT RIGHT(website, 3) AS website_type
 	,count(*)
 FROM accounts
@@ -8,7 +9,7 @@ GROUP BY website_type
 
 
 
-LEFT
+--LEFT
 
 SELECT LEFT(name, 1) AS first_char
 	,count(*)
