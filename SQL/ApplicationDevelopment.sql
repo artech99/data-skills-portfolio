@@ -1,4 +1,4 @@
-PYTHON
+# PYTHON
 
 
 # %s is a variable that points to the passed parameter; the '\' in the SQL statement is used to create a line break
@@ -14,7 +14,7 @@ def getProductOrdersByType(db_conn, prod_type):
     return cursor.fetchall()
 
 
-Option 1: Filter for quantity > 3
+# Option 1: Filter for quantity > 3
 def getProductOrdersByType(db_conn, prod_type):
     cursor = db_conn.cursor()
     sql_string = "SELECT po.*  \
@@ -29,7 +29,7 @@ def getProductOrdersByType(db_conn, prod_type):
 all_fryers = getProductOrdersByType(conn, 'fryer')
 
 
-Option 2: Substitute the literal '3' for a parameter for quantity
+# Option 2: Substitute the literal '3' for a parameter for quantity
 def getProductOrdersByType(db_conn, prod_type):
     cursor = db_conn.cursor()
     sql_string = "SELECT po.*  \
