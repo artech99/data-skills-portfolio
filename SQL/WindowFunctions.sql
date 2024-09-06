@@ -7,7 +7,7 @@ OVER
 	• Used with Windows functions to aggregate results based on a given value; works similar to GROUP BY
 */
 
-/* Verbise solution
+/* Verbose solution
 -select animals admitted after given date, total # of animals
 */
 
