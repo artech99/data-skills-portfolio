@@ -1,0 +1,25 @@
+//Create a loop that writes the lyrics of the song "99 Bottles of Beer on the Wall"
+
+var num = 99;
+
+while (num >= 1) {
+    // Last iteration. Note occurrences of bottle, bottle, bottleS
+    if (num === 1) {
+        console.log(num + " bottle of juice on the wall! " +
+            num + " bottle of juice! Take one down, pass it around... " +
+            (num - 1) + " bottles of juice on the wall!");
+    }
+    // Second-last iteration. Note occurrences of bottleS, bottleS, bottle
+    else if (num === 2) {
+        console.log(num + " bottles of juice on the wall! " +
+            num + " bottles of juice! Take one down, pass it around... " +
+            (num - 1) + " bottle of juice on the wall!");
+    }
+    // All other iterations. Note occurrences of bottleS, bottleS, bottleS
+    else {
+        console.log(num + " bottles of juice on the wall! " +
+            num + " bottles of juice! Take one down, pass it around... " +
+            (num - 1) + " bottles of juice on the wall!");
+    }
+    num = num - 1;
+}

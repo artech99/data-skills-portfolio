@@ -1,0 +1,8 @@
+//Create a loop that returns Fizz for numbers divisible by 3, Buzz for numbers divisible by 5, FizzBuzz for numbers divisible by 3 and 5, and the number itself for numbers that are not divisible by 3 or 5
+
+var x = 1;
+
+while (x <= 20) { 
+    console.log((x % 3 === 0) ? ((x % 5 === 0) ? "FizzBang" : "Fizz") : ((x % 5 === 0) ? "Bang" : x));
+    var x = x + 1;
+}

@@ -1,0 +1,52 @@
+//Create an alert on an html page on every other mouse click 
+
+ 
+<!-- button.html --> 
+ 
+<html>  
+ 
+<body>  
+ 
+<button id='button'>Click me!</button>  
+ 
+<script src='button.js'></script>  
+ 
+</body>  
+ 
+</html> 
+ 
+ 
+ 
+// button.js  
+ 
+const button = document.getElementById('button');  //within the button.js file, retrieve a reference to the button element via its ID, and save it as a variable. 
+ 
+ 
+//Add an event listener to button, and listen for a 'click' event. Pass in an IIFE as the second argument: 
+ 
+button.addEventListener('click', (function() { 
+let count = 0;  
+ 
+return function() { 
+count += 1;  
+ 
+if (count === 2) { 
+alert('This alert appears every other press!');  
+count = 0; //resets count to 0 after every second click 
+} 
+};  
+})());
+
+
+
+// Create a popup alert
+
+alert("Enter text here") or alert('Enter text here')
+
+// print the ASCI value for all characters in a string
+var my_string = "Udacity";
+
+// Iterate using a Loop
+for (var i = 0; i < my_string.length; i++) {
+    console.log(my_string.charCodeAt(i));
+}

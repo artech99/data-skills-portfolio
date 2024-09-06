@@ -1,0 +1,28 @@
+//This simple murder mystery takes the Room and the Suspect as inputs. This code then determines if the room and suspect match, and identifies the weapon used accordingly.
+
+var room = "gallery"
+var suspect = "Ms. Van Cleve"
+var weapon;
+var solved;
+
+if (room == "ballroom" && suspect == "Mr. Kalehoff") {
+    weapon = "poison";
+    solved = true;
+} else if (room == "gallery" && suspect == "Ms. Van Cleve") {
+    weapon = "trophy";
+    solved = true;
+} else if (room == "billiards room" && suspect == "Mrs. Sparr") {
+    weapon = "pool stick";
+    solved = true;
+} else if (room == "dining room" && suspect == "Mr. Parkes") {
+    weapon = "knife";
+    solved = true;
+} else {
+    solved = false;
+}
+
+if (solved === true) {
+    console.log(suspect + " did it in the " + room + " with the " + weapon + ".");
+} else {
+    console.log("This murder remains a mystery...");
+}
