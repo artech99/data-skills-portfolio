@@ -1,7 +1,3 @@
-COALESCE
-	• Replaces null values with user defined values
-
-
 SELECT COALESCE(o.id, a.id) AS missing_accountID
 	,COALESCE(o.account_id, o.account_ID) AS o.account_ID
 	,*
