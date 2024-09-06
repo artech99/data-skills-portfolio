@@ -1,7 +1,8 @@
-hstore
+/* hstore
 
 Stores keys and values as a string
 	• Values are stored in a single database column, but can be queried
+*/
 
 CREATE EXTENSION hstore;
 
@@ -25,9 +26,10 @@ FROM books;
 
 
 
-JSON and JSONB
+/* JSON and JSONB
 
 JSONB allows indexing, whereas JSON does not
+*/
 
 CREATE TABLE customer_summary (
 	id serial PRIMARY KEY
