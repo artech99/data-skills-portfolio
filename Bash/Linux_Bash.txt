@@ -1,0 +1,44 @@
+# Simple Bash Script 
+
+This is a simple bash script created for the Coursera Data Engineering course. It prints a phrase multiple times with optional reversal.
+This script was created to demonstrate basic bash scripting skills, including:
+
+- Using concatenate to combine all repeated output into a single string
+-Adding a delimiter character between repeated phrases
+- Using a function to convert phrase to uppercase on each repeat
+
+To access the project, visit the URL below and click on Terminal > New Terminal:
+https://hub.labs.coursera.org/connect/sharedwjqpainb?forceRefresh=false&path=%2F%3Ffolder%3D%2Fhome%2Fcoder%2Fproject&isLabVersioning=file-prep
+
+
+This script is already executable, but permissions could be add using the 'chmod +x phrase.sh' command, if needed.
+
+# Options
+
+--count: Number of times to print the phrase (default: 5)
+--phrase: Custom phrase to print (default: "hello world")
+--reverse: flag set to true (0) or false (1)
+
+
+# Sample Commands
+
+# run phrase generator script
+./phrase.sh 
+
+# set reverse flag to true and re-run the script; repeating turning the flag off
+./phrase.sh 
+
+# create a new file named phrases.txt
+touch phrases.txt 
+
+# add the output of the phrase generator script to the phrases.txt file
+coder@19e1b7e44e70:~/project$ ./phrase.sh > phrases.txt 
+
+# convert the output of the phrase generator script to a string and add it to the phrases.txt file
+cat phrases.txt | tr -s "\n"":" >> phrases.txt 
+
+# create a new file named phrase_rev_cap.txt
+touch phrase_rev_cap.txt 
+
+# convert the output of the phrase generator script to ALL CAPS and add it to the phrase_rev_cap.txt file
+./phrase.sh | tr a-z A-Z >> phrase_rev_cap.txt 
