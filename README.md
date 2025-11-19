@@ -5,11 +5,11 @@ Hi, I’m Myesha. I’m an IT professional with extensive experience in successf
 
 About Me
 
-My primary role has been as a Product Owner, but I am looking to transition into a more hands-on technical role. My target roles include:
+I have extensive experience working as an analyst and a product owner. As I continue to develop my technical skills, I am targetting the following roles:
 * Data Engineer
+* Data Analyst
+* Business Intelligence Analyst
 * Data Warehouse Developer
-* Database Developer
-* SQL Developer
 
 
 Goals and Qualifications
