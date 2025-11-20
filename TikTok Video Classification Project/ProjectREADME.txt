@@ -1,0 +1,1 @@
+The TikTok Video Classification Project is a part of the capstone projected for the Google Advanced Data Analytics Certification. The data and scenarios used for this project were developed by Google, and the story, all names, characters, and incidents portrayed in this project are fictitious.
